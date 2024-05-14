@@ -1,0 +1,174 @@
+﻿@using WebApplication3.Models;
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumb-section container mx-auto my-5 px-2 sm:px-8">
+    <ul class="flex flex-wrap items-center gap-1">
+        <li class="transition-all-300 hover:text-primary-color">
+            <a href="#!">Home</a>
+        </li>
+        <li>
+            <i class="bi bi-caret-right-fill flex text-primary-color"></i>
+        </li>
+        <li class="transition-all-300 hover:text-primary-color">
+            <a href="#!">Shopping Cart</a>
+        </li>
+        <li>
+            <i class="bi bi-caret-right-fill flex text-primary-color"></i>
+        </li>
+        <li class="transition-all-300 active hover:text-primary-color">
+            <a href="#!">Checkout</a>
+        </li>
+    </ul>
+</div>
+
+<div class="banner-title-section container mx-auto my-5 px-2 sm:px-8">
+    <div class="liner-container my-5 flex justify-center border-b-2 border-[rgba(119,119,119,.17)]">
+        <h1 class="mb-[-2px] inline-block border-b-2 border-primary-color pb-3 text-2xl font-bold uppercase">
+            Checkout
+        </h1>
+    </div>
+</div>
+
+<div class="checkout-section container mx-auto my-5 px-2 sm:px-8">
+    <form class="grid grid-cols-12 gap-5 rounded-lg bg-white p-2 xs:p-8" action="#">
+        <div class="col-span-12 lg:col-span-8">
+            <span class="text-lg font-semibold">Billing Details</span>
+            <div class="grid grid-cols-12 gap-5 pt-5">
+
+                @if (Session["UserId"] != null)
+                {
+                    Account a = (Account)Session["UserId"];
+                    <div class="col-span-12 xs:col-span-6">
+                        <label class="flex flex-col">
+                            <span class="text-sm">First Name</span>
+                            <input class="input" value="@a.FirstName" type="text" disabled />
+                        </label>
+                    </div>
+                    <div class="col-span-12 xs:col-span-6">
+                        <label class="flex flex-col">
+                            <span class="text-sm">Last Name</span>
+                            <input class="input" value="@a.LastName" type="text" disabled />
+                        </label>
+                    </div>
+                    <div class="col-span-12">
+                        <label class="flex flex-col">
+                            <span class="text-sm">Email</span>
+                            <input class="input" value="@a.Email" type="text" disabled />
+                        </label>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-span-12 xs:col-span-6">
+                        <label class="flex flex-col">
+                            <span class="text-sm">First Name</span>
+                            <input class="input" type="text" disabled />
+                        </label>
+                    </div>
+                    <div class="col-span-12 xs:col-span-6">
+                        <label class="flex flex-col">
+                            <span class="text-sm">Last Name</span>
+                            <input class="input" type="text" disabled />
+                        </label>
+                    </div>
+                    <div class="col-span-12">
+                        <label class="flex flex-col">
+                            <span class="text-sm">Email</span>
+                            <input class="input" type="text" disabled />
+                        </label>
+                    </div>
+                }
+                <div class="col-span-12">
+                    <label class="flex flex-col">
+                        <span class="text-sm">Address</span>
+                        <input id="address" class="input" type="text" required />
+                    </label>
+                </div>
+                <div class="col-span-12 xs:col-span-6">
+                    <label class="flex flex-col">
+                        <span class="text-sm">City</span>
+                        <input id="city" class="input" type="text" required />
+                    </label>
+                </div>
+                <div class="col-span-12 xs:col-span-6">
+                    <label class="flex flex-col">
+                        <span class="text-sm">Telephone</span>
+                        <input id="telephone" class="input input-number" type="number" required />
+                    </label>
+                </div>
+                <div class="col-span-12 xs:col-span-6">
+                    <div class="flex h-full flex-col">
+                        <label class="flex" for="form-country">
+                            <span class="text-sm">Phương thức thanh toán</span>
+                        </label>
+                        <select class="nice-select country select flex h-full w-full items-center form-payment" id="form-country">
+                            <option value="3">VNPAY</option>
+                            <option value="4" selected>Thanh toán khi nhận hàng</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-span-12 flex flex-wrap justify-between gap-5">
+                    @if (Session["UserId"] != null)
+                    {
+                        Account a = (Account)Session["UserId"];
+                        <a class="btn-effect rounded-lg bg-primary-color p-4 font-bold uppercase text-white" href="@Url.Action("Index", "Home", new {code=a.AccountCode})">
+                            <span>Cancel</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn-effect rounded-lg bg-primary-color p-4 font-bold uppercase text-white" href="@Url.Action("Index", "Home")">
+                            <span>Cancel</span>
+                        </a>
+                    }
+                    <button class="btn-effect rounded-lg bg-primary-color p-4 font-bold uppercase text-white" onclick="checkout()" type="submit">
+                        <span>Continue</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-12 lg:col-span-4">
+            <div class="rounded-lg border-2 p-4">
+                <span class="mb-10 inline-block text-center text-lg font-bold">Summary of your purchase:</span>
+                @if (ViewBag.subtotal != null)
+                {
+                    <div class="py-4">
+                        <div class="my-2 flex justify-between">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">₫@ViewBag.subtotal</span>
+                        </div>
+                        <div class="my-2 flex justify-between">
+                            <span>Shipping:</span>
+                            <span>₫30,000</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between border-t-2 border-gray-200 pt-4 text-xl font-bold uppercase">
+                        <span>Total:</span>
+                        <span id="total" data-total="@ViewBag.tong">₫@ViewBag.total</span>
+                    </div>
+                }
+                else
+                {
+                    <div class="py-4">
+                        <div class="my-2 flex justify-between">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">₫0</span>
+                        </div>
+                        <div class="my-2 flex justify-between">
+                            <span>Shipping:</span>
+                            <span>₫30,000</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between border-t-2 border-gray-200 pt-4 text-xl font-bold uppercase">
+                        <span>Total:</span>
+                        <span id="total" data-total="0">₫0</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,487 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5226EFD8-D84C-41DC-8C67-BB95ACD103C0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication3</RootNamespace>
+    <AssemblyName>WebApplication3</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44342</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.9\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\cdn.jsdelivr.net\npm\bootstrap-icons%401.7.2\font\bootstrap-icons.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\images\about-us\about-img.jpg" />
+    <Content Include="Content\images\banner\banner-1.png" />
+    <Content Include="Content\images\banner\banner-2.jpg" />
+    <Content Include="Content\images\banner\banner-3.jpg" />
+    <Content Include="Content\images\banner\banner-4.jpg" />
+    <Content Include="Content\images\banner\banner-robot.png" />
+    <Content Include="Content\images\banner\keyboard-custom.jpg" />
+    <Content Include="Content\images\banner\keyboard.jpg" />
+    <Content Include="Content\images\banner\robot_cleaner.png" />
+    <Content Include="Content\images\brands\amd-logo.png" />
+    <Content Include="Content\images\brands\asrock-logo.png" />
+    <Content Include="Content\images\brands\asus-logo.png" />
+    <Content Include="Content\images\brands\corsair-logo.png" />
+    <Content Include="Content\images\brands\genius-logo.png" />
+    <Content Include="Content\images\brands\gigabyte-logo.png" />
+    <Content Include="Content\images\brands\hp-logo.png" />
+    <Content Include="Content\images\brands\intel-logo.png" />
+    <Content Include="Content\images\brands\kingston-logo.png" />
+    <Content Include="Content\images\brands\lenovo-logo.png" />
+    <Content Include="Content\images\brands\logitech-logo.png" />
+    <Content Include="Content\images\brands\msi-logo.png" />
+    <Content Include="Content\images\brands\nvidia-logo.png" />
+    <Content Include="Content\images\brands\philips-logo.png" />
+    <Content Include="Content\images\brands\redragon-logo.png" />
+    <Content Include="Content\images\brands\samsung-logo.png" />
+    <Content Include="Content\images\cards\mousepad.jpg" />
+    <Content Include="Content\images\cards\notebooks\note_1.jpg" />
+    <Content Include="Content\images\cards\notebooks\note_2.jpg" />
+    <Content Include="Content\images\cards\notebooks\note_3.jpg" />
+    <Content Include="Content\images\cards\notebooks\note_4.jpg" />
+    <Content Include="Content\images\cards\notebooks\note_5.jpg" />
+    <Content Include="Content\images\cards\notebooks\note_6.jpg" />
+    <Content Include="Content\images\cards\phones\phone_1.jpg" />
+    <Content Include="Content\images\cards\phones\phone_2.jpg" />
+    <Content Include="Content\images\cards\phones\phone_3.jpg" />
+    <Content Include="Content\images\cards\phones\phone_4.jpg" />
+    <Content Include="Content\images\cards\phones\phone_5.jpg" />
+    <Content Include="Content\images\cards\phones\phone_6.jpg" />
+    <Content Include="Content\images\categories\banner-robot.png" />
+    <Content Include="Content\images\categories\computers\desktops.jpg" />
+    <Content Include="Content\images\categories\computers\notebooks.jpg" />
+    <Content Include="Content\images\categories\ergonic-chair-01.jpg" />
+    <Content Include="Content\images\categories\gaming\accessories.jpg" />
+    <Content Include="Content\images\categories\gaming\consoles.jpg" />
+    <Content Include="Content\images\categories\gaming\games.jpg" />
+    <Content Include="Content\images\categories\keyboard-custom.jpg" />
+    <Content Include="Content\images\categories\keyboard.jpg" />
+    <Content Include="Content\images\categories\pc_components\computer_case.jpg" />
+    <Content Include="Content\images\categories\pc_components\hard_drives.jpg" />
+    <Content Include="Content\images\categories\pc_components\motherboards.jpg" />
+    <Content Include="Content\images\categories\pc_components\power_supplys.jpg" />
+    <Content Include="Content\images\categories\pc_components\processors.jpg" />
+    <Content Include="Content\images\categories\pc_components\rams.jpg" />
+    <Content Include="Content\images\categories\pc_components\ssd_disk.jpg" />
+    <Content Include="Content\images\categories\pc_components\video_cards.jpg" />
+    <Content Include="Content\images\categories\peripherals\keywords.jpg" />
+    <Content Include="Content\images\categories\peripherals\mic.jpg" />
+    <Content Include="Content\images\categories\peripherals\mouse.jpg" />
+    <Content Include="Content\images\categories\peripherals\webcam.jpg" />
+    <Content Include="Content\images\categories\robot_cleaner.png" />
+    <Content Include="Content\images\categories\sec-desktop-g.jpg" />
+    <Content Include="Content\images\categories\sec-desktops.jpg" />
+    <Content Include="Content\images\categories\sec-notebooks.jpg" />
+    <Content Include="Content\images\categories\sliders\notebooks.jpg" />
+    <Content Include="Content\images\categories\sliders\smartphones.jpg" />
+    <Content Include="Content\images\categories\software\antivirus.jpg" />
+    <Content Include="Content\images\categories\software\office.jpg" />
+    <Content Include="Content\images\categories\software\os.jpg" />
+    <Content Include="Content\images\categories\vr-glass-hero.jpg" />
+    <Content Include="Content\images\comments\profile_1.png" />
+    <Content Include="Content\images\comments\profile_2.png" />
+    <Content Include="Content\images\product\Balo laptop Asus Rog BP1500G-01.jpg" />
+    <Content Include="Content\images\product\Balo laptop Asus Rog BP1500G.jpg" />
+    <Content Include="Content\images\product\Balo laptop Asus TUF Gaming VP4700-01.jpg" />
+    <Content Include="Content\images\product\Balo laptop Asus TUF Gaming VP4700.jpg" />
+    <Content Include="Content\images\product\ban-phim-co.jpg" />
+    <Content Include="Content\images\product\banner-robot.png" />
+    <Content Include="Content\images\product\beat-headphone.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Black &amp; Gold-01.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Black &amp; Gold-02.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Black &amp; Gold-03.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Matcha Red Bean-01.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Matcha Red Bean-2.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Matcha Red Bean.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Ocean Star-01.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Ocean Star-02.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Akko Ocean Star.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K10 Pro-01.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K10 Pro-02.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K10 Pro.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K2 Pro -01.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K2 Pro-02.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K2 Pro.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K3 v2-01.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K3 v2-02.jpg" />
+    <Content Include="Content\images\product\Bàn phím cơ Keychron K3 v2.jpg" />
+    <Content Include="Content\images\product\Bút cảm ứng Xiaomi -01.jpg" />
+    <Content Include="Content\images\product\Bút cảm ứng Xiaomi.jpg" />
+    <Content Include="Content\images\product\Cân thông minh Xiaomi Smart Scale 2 -01.jpg" />
+    <Content Include="Content\images\product\Cân thông minh Xiaomi Smart Scale 2.jpg" />
+    <Content Include="Content\images\product\drame-l20-ultra-station.jpg" />
+    <Content Include="Content\images\product\Dreame Bot L20 Ultra.jpg" />
+    <Content Include="Content\images\product\egornic-chair.jpg" />
+    <Content Include="Content\images\product\ergonic chair.jpg" />
+    <Content Include="Content\images\product\gaming-gear.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học E-DRA EEC213-01.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học E-DRA EEC213-02.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học E-DRA EEC213-03.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học E-DRA EEC213.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione Easy Chair 2.0-01.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione Easy Chair 2.0-02.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione Easy Chair 2.0.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione ErgoChair 2.0-01.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione ErgoChair 2.0-02.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione ErgoChair 2.0-03.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione ErgoChair 2.0.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Epione ErgoChair 3.0.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Xiaomi Butterfly-01.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Xiaomi Butterfly-02.jpg" />
+    <Content Include="Content\images\product\Ghế công thái học Xiaomi Butterfly.jpg" />
+    <Content Include="Content\images\product\Ghế E-Dra EEC214-01.jpg" />
+    <Content Include="Content\images\product\Ghế E-Dra EEC214-02.jpg" />
+    <Content Include="Content\images\product\Ghế E-Dra EEC214.jpg" />
+    <Content Include="Content\images\product\keyboard-custom.jpg" />
+    <Content Include="Content\images\product\keyboard.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Meta Quest 2-01.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Meta Quest 2-03.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Meta Quest 2.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Meta Quest 3-01.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Meta Quest 3-02.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Meta Quest 3.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Sony Playstation VR2-01.jpg" />
+    <Content Include="Content\images\product\Kính thực tế ảo Sony Playstation VR2-02.jpg" />
+    <Content Include="Content\images\product\Kính-thực-tế-ảo-Sony-Playstation-VR2.jpg" />
+    <Content Include="Content\images\product\Levoit100S.jpg" />
+    <Content Include="Content\images\product\mouse.jpg" />
+    <Content Include="Content\images\product\Máy chơi game ASUS ROG Ally Z1 -01.jpg" />
+    <Content Include="Content\images\product\Máy chơi game ASUS ROG Ally Z1 -02.jpg" />
+    <Content Include="Content\images\product\Máy chơi game ASUS ROG Ally Z1.jpg" />
+    <Content Include="Content\images\product\Máy chơi game Sony PlayStation 5  Bundle Marvel%27s Spiderman-01.jpg" />
+    <Content Include="Content\images\product\Máy chơi game Sony PlayStation 5  Bundle Marvel%27s Spiderman-02.jpg" />
+    <Content Include="Content\images\product\Máy chơi game Sony PlayStation 5  Bundle Marvel%27s Spiderman.jpg" />
+    <Content Include="Content\images\product\Máy chơi game Sony PlayStation 5-01.jpg" />
+    <Content Include="Content\images\product\Máy chơi game Sony PlayStation 5-02.jpg" />
+    <Content Include="Content\images\product\Máy chơi game Sony PlayStation 5.jpg" />
+    <Content Include="Content\images\product\Máy lọc không khí Levoit Core 300 -01.jpg" />
+    <Content Include="Content\images\product\Máy lọc không khí Levoit Core 300 -02.jpg" />
+    <Content Include="Content\images\product\Máy lọc không khí Levoit Core 300.jpg" />
+    <Content Include="Content\images\product\Máy lọc không khí và bắt muỗi SHARP FP-GM50E-B.jpg" />
+    <Content Include="Content\images\product\Pin sạc dự phòng Energizer 15.000 UE200-01.jpg" />
+    <Content Include="Content\images\product\Pin sạc dự phòng Energizer 15.000 UE200.jpg" />
+    <Content Include="Content\images\product\Pin sạc dự phòng Energizer 20.000 QE20013-01.png" />
+    <Content Include="Content\images\product\Pin sạc dự phòng Energizer 20.000 QE20013-02.jpg" />
+    <Content Include="Content\images\product\Pin sạc dự phòng Energizer 20.000 QE20013.jpg" />
+    <Content Include="Content\images\product\Pin sạc dự phòng Xiaomi Power Bank 10.000-01.jpg" />
+    <Content Include="Content\images\product\Pin sạc dự phòng Xiaomi Power Bank 10.000.jpg" />
+    <Content Include="Content\images\product\prod-1.jpg" />
+    <Content Include="Content\images\product\prod-2.jpg" />
+    <Content Include="Content\images\product\prod-3.jpg" />
+    <Content Include="Content\images\product\Robot hút bụi lau nhà Xiaomi Vacuum Mop X10-02.jpg" />
+    <Content Include="Content\images\product\Tai nghe Gaming Asus Rog Strix Fusion-01.jpeg" />
+    <Content Include="Content\images\product\Tai nghe Gaming Asus Rog Strix Fusion.jpg" />
+    <Content Include="Content\images\product\Tai nghe Gaming Inzone-02.jpg" />
+    <Content Include="Content\images\product\Tai nghe Gaming Inzone.jpg" />
+    <Content Include="Content\images\product\Webcam Logitech Brio Micro 500-01.png" />
+    <Content Include="Content\images\product\Webcam Logitech Brio Micro 500.jpg" />
+    <Content Include="Content\images\product\Webcam Logitech C310 HD 720P-01.jpg" />
+    <Content Include="Content\images\product\Webcam Logitech C310 HD 720P.png" />
+    <Content Include="Content\images\product\Xiaomi Air Purifier 4 Pro.jpg" />
+    <Content Include="Content\images\product\Xiaomi Vacuum Mop X10+.jpg" />
+    <Content Include="Content\images\product\Xiaomi Vacuum Mop X10-01.jpg" />
+    <Content Include="Content\images\product\xiaomi-air-purifier-1.jpg" />
+    <Content Include="Content\images\product\xiaomi-air-purifier-4-pro-4.jpg" />
+    <Content Include="Content\images\svg\deactivate-account.svg" />
+    <Content Include="Content\images\svg\logo.svg" />
+    <Content Include="Content\images\svg\maintenance.svg" />
+    <Content Include="Content\images\svg\mastercard-logo.svg" />
+    <Content Include="Content\images\svg\message-sent.svg" />
+    <Content Include="Content\images\svg\password-successfull.svg" />
+    <Content Include="Content\images\svg\purchase-cancelled.svg" />
+    <Content Include="Content\images\svg\purchase-done.svg" />
+    <Content Include="Content\images\svg\visa-logo.svg" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\jsShoppingCart.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\validator.js" />
+    <Content Include="Content\libraries\iziToast\iziToast.min.css" />
+    <Content Include="Content\libraries\iziToast\iziToast.min.js" />
+    <Content Include="Content\libraries\mixitup\mixitup.min.js" />
+    <Content Include="Content\libraries\nice-select2\nice-select2.css" />
+    <Content Include="Content\libraries\nice-select2\nice-select2.js" />
+    <Content Include="Content\libraries\rater-js\rater-js.css" />
+    <Content Include="Content\libraries\rater-js\rater-js.js" />
+    <Content Include="Content\libraries\rater-js\star_0.svg" />
+    <Content Include="Content\libraries\rater-js\star_1.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\unpkg.com\metismenujs%401.4.0\dist\metismenujs.min.css" />
+    <Content Include="Content\unpkg.com\metismenujs%401.4.0\dist\metismenujs.min.js" />
+    <Content Include="Content\unpkg.com\popperjs\core.js" />
+    <Content Include="Content\unpkg.com\swiper%4011.0.4\swiper-bundle.min.css" />
+    <Content Include="Content\unpkg.com\swiper%4011.0.4\swiper-bundle.min.js" />
+    <Content Include="Content\webapidemo.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiControllers\AccountAddressController.cs" />
+    <Compile Include="ApiControllers\AccountController.cs" />
+    <Compile Include="ApiControllers\CartController.cs" />
+    <Compile Include="ApiControllers\OrderController.cs" />
+    <Compile Include="ApiControllers\OrderDetailController.cs" />
+    <Compile Include="ApiControllers\ProductController.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountAddress.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Brand.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Delivery.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Encryptor.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImg.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Promotion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VnPayLibrary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\cdn.jsdelivr.net\npm\bootstrap-icons%401.7.2\font\fonts\bootstrap-iconsf114.woff" />
+    <Content Include="Content\cdn.jsdelivr.net\npm\bootstrap-icons%401.7.2\font\fonts\bootstrap-iconsf114.woff2" />
+    <Content Include="Content\images\product\Tai nghe Gaming Inzone-01.avif" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Shop.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Signup.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Account\VnpayReturn.cshtml" />
+    <Content Include="Views\Home\Complete.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58754</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44342/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

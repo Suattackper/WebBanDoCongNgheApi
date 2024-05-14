@@ -1,0 +1,492 @@
+﻿<div class="breadcrumb-section container mx-auto my-5 px-2 sm:px-8">
+    <ul class="flex flex-wrap items-center gap-1">
+        <li class="transition-all-300 hover:text-primary-color">
+            <a href="#!">Home</a>
+        </li>
+        <li>
+            <i class="bi bi-caret-right-fill flex text-primary-color"></i>
+        </li>
+        @if (ViewBag.Shop != null)
+        {
+            <li id="category" data-category="@ViewBag.Shop" class="transition-all-300 active hover:text-primary-color">
+                <a href="#!">@ViewBag.Title</a>
+            </li>
+        }
+        else
+        {
+            <li id="category" data-category="@ViewBag.Shop" class="transition-all-300 active hover:text-primary-color">
+                <a href="#!">Shop</a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="shop-section container mx-auto my-5 px-2 sm:px-8">
+    <div class="grid grid-cols-12 gap-5">
+        <div class="col-span-12">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-lg"></span>
+                <div class="flex items-center gap-5">
+                    <ul class="shop-mix flex items-center gap-2 text-gray-200">
+                        <li class="control tippy tippy-grid transition-all-300 cursor-pointer hover:text-primary-hover"
+                            data-filter=".mix-main">
+                            <i class="bi bi-grid-3x3-gap-fill flex text-3xl"></i>
+                        </li>
+                        <li class="control tippy tippy-list transition-all-300 cursor-pointer hover:text-primary-hover"
+                            data-filter=".mix-list">
+                            <i class="bi bi-list text-stroke-medium flex text-4xl"></i>
+                        </li>
+                    </ul>
+                    <form>
+                        <select class="nice-select order-by select">
+                            <option value="0">Lower price</option>
+                            <option value="1">Higher price</option>
+                            <option value="1">Most popular</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-12 md:col-span-4 lg:col-span-4 xl:col-span-3">
+            <form class="flex flex-col rounded-lg bg-white p-5" action="#">
+                <div class="mb-5 flex items-center gap-2">
+                    <i class="bi bi-funnel flex text-sm text-primary-color"></i>
+                    <h1 class="text-xl font-bold uppercase">Search Filter</h1>
+                </div>
+                <div class="mb-5 border-t-2 pt-5">
+                    <div class="relative flex items-center">
+                        <i class="bi bi-search text-stroke-medium absolute ml-4 flex text-gray-400"></i>
+                        <input class="input pl-10" type="search" placeholder="Search..." />
+                    </div>
+                </div>
+                <div class="mb-5 border-t-2 pt-5">
+                    <span class="mb-2 flex font-semibold">Service and Promotion</span>
+                    <label class="transition-all-300 my-1 flex cursor-pointer select-none items-center gap-2 hover:text-primary-color">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="text-gray-title">With discount</span>
+                    </label>
+                    <label class="transition-all-300 my-1 flex cursor-pointer select-none items-center gap-2 hover:text-primary-color">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="text-gray-title">Free Shipping</span>
+                    </label>
+                    <label class="transition-all-300 my-1 flex cursor-pointer select-none items-center gap-2 hover:text-primary-color">
+                        <input class="checkbox" type="checkbox" />
+                        <span class="text-gray-title">Available stock</span>
+                    </label>
+                </div>
+                <div class="mb-5 border-t-2 pt-5">
+                    <div class="see-more relative pb-5">
+                        <div class="see-more-container gradient-bottom max-h-[220px] overflow-hidden">
+                            <div class="see-more-content">
+                                <span class="mb-2 flex font-semibold">Categories</span>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Pc components</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Peripherals</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Computers</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Monitors</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Printers</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Gaming</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Tablets</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Smartphones</span>
+                                </label>
+                                <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                                    <input class="checkbox" type="checkbox" />
+                                    <span class="text-gray-title">Software</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn-see-more absolute bottom-0 z-10 flex w-full justify-center hover:text-primary-color"
+                                type="button">
+                            <i class="bi bi-chevron-compact-down text-stroke-medium transition-all-300 flex text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mb-5 border-t-2 pt-5">
+                    <span class="mb-2 flex font-semibold">Brands</span>
+                    <div class="max-h-[220px] overflow-auto">
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Amd</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Asrock</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Asus</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Gigabyte</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">HP</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Intel</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Lenovo</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Msi</span>
+                        </label>
+                        <label class="transition-all-300 flex cursor-pointer select-none items-center gap-2 p-1 hover:text-primary-color">
+                            <input class="checkbox" type="checkbox" />
+                            <span class="text-gray-title">Samsung</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-5 border-t-2 pt-5">
+                    <span class="mb-2 flex font-semibold">Colors</span>
+                    <div class="product-colors block">
+                        <div class="mt-2 flex gap-2">
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio"
+                                           class="radio bg-blue-600 text-blue-600 checked:ring-blue-300 focus:ring-blue-300"
+                                           name="radio-colors" value="0" checked />
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="radio bg-red-600 text-red-600 checked:ring-red-300 focus:ring-red-300"
+                                           name="radio-colors" value="1" />
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio"
+                                           class="radio bg-yellow-600 text-yellow-600 checked:ring-yellow-300 focus:ring-yellow-300"
+                                           name="radio-colors" value="2" />
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" class="radio bg-black text-black checked:ring-gray-400 focus:ring-gray-400"
+                                           name="radio-colors" value="3" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t-2 pt-5">
+                    <span class="mb-2 flex font-semibold">Price range</span>
+                    <div class="flex items-center gap-2">
+                        <input class="input input-number" type="number" placeholder="$ MIN" />
+                        <div class="h-[2px] w-10 bg-gray-200"></div>
+                        <input class="input input-number" type="number" placeholder="$ MAX" />
+                    </div>
+                    <button class="btn-effect mt-2 w-full rounded-lg bg-primary-color p-2 font-bold uppercase text-white"
+                            type="submit">
+                        <span>Filter</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-span-12 md:col-span-8 lg:col-span-8 xl:col-span-9">
+            <div class="mix-elements mix-all grid grid-cols-12 gap-5 data-products">
+                <!--data-->
+            </div>
+        </div>
+        <div class="col-span-12">
+            <div class="flex items-center justify-center">
+                <ul class="pagination flex items-center">
+                    @*<li class="pointer-events-none py-2 px-3 text-gray-200">
+                        <i class="bi bi-arrow-left-short flex"></i>
+                    </li>
+                    <li class="active cursor-pointer py-2 px-3">1</li>
+                    <li class="cursor-pointer py-2 px-3">2</li>
+                    <li class="cursor-pointer py-2 px-3">3</li>
+                    <li class="hidden cursor-pointer py-2 px-3 tracking-wide sm:block">
+                        ...
+                    </li>
+                    <li class="hidden cursor-pointer py-2 px-3 sm:block">10</li>
+                    <li class="hidden cursor-pointer py-2 px-3 sm:block">11</li>
+                    <li class="cursor-pointer py-2 px-3 text-primary-color">
+                        <i class="bi bi-arrow-right-short flex"></i>
+                    </li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@*<script>
+    $(document).ready(function () {
+        const itemsPerPage = 9; // Số lượng sản phẩm trên mỗi trang
+        let currentPage = 1; // Trang hiện tại
+        var totalPages = 0;
+
+        // Hàm để hiển thị dữ liệu cho trang hiện tại
+        function displayData(products) {
+            $('.data-products').empty(); // Xóa dữ liệu hiện tại trước khi hiển thị dữ liệu mới
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = currentPage * itemsPerPage;
+            const currentPageProducts = products.slice(startIndex, endIndex);
+            currentPageProducts.forEach(product => {
+                // Tạo HTML cho mỗi sản phẩm và thêm vào $('.data-products')
+                /*var d = 0;*/
+                var strPrice = '';
+                var strHTML = `
+                <div class="mix mix-main col-span-12 h-auto sm:col-span-6 lg:col-span-4">
+                    <div class="card-container transition-all-300 translateY-2 relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md hover:z-[2] hover:shadow-xl">
+                `;
+                //$.ajax({
+                //    url: '/Api/Promotion',
+                //    type: 'GET',
+                //    async: false, // Sử dụng async: false để đảm bảo sự tuần tự trong việc gọi Ajax
+                //    success: (ress) => {
+                //        for (var j = 0; j < ress.length; j++) { // Sửa thành < thay vì <=
+                //            const promotion = ress[j]; // Sử dụng j thay vì i
+                //            if (promotion.PromotionCode == product.PromotionCode) {
+                //                const currentDate = new Date();
+                //                if (promotion.EndDate < currentDate) break;
+                //                strHTML = strHTML + `
+                //                <div class="absolute left-0 top-0 flex h-[35px] w-[90px] items-center justify-center rounded-br-lg bg-primary-color">
+                //                        <span class="text-md text-center font-semibold uppercase text-white">
+                //                            ${promotion.PromotionPercentage}% Off
+                //                        </span>
+                //                 </div>`;
+                //                break;
+                //            }
+                //        }
+                //        for (var k = 0; k < ress.length; k++) { // Sửa thành < thay vì <=
+                //            const promotion = ress[k]; // Sử dụng k thay vì i
+                //            if (promotion.PromotionCode == product.PromotionCode) {
+                //                const currentDate = new Date();
+                //                if (promotion.EndDate < currentDate) break;
+                //                d++;
+                //                const formattedPrice = product.Price - (promotion.PromotionPercentage * product.Price / 100);
+                //                const formattedString = "₫" + formattedPrice.toLocaleString(); // Sử dụng hàm toLocaleString để định dạng số
+                //                const formattedString2 = "₫" + product.Price.toLocaleString();
+                //                strPrice = strPrice + `
+                //                <span class="text-lg font-bold">${formattedString}</span>
+                //                <span class="text-sm text-primary-color line-through">${formattedString2}</span>`;
+                //                break;
+                //            }
+                //        }
+                //    },
+                //    error: (er) => { console.log(er); }
+                //});
+                const detailUrl = '#!';
+                product.Description = '';
+                /*const imageData = product.ImageProduct;*/
+                strHTML = strHTML + `
+                        <div class="h-[190px] overflow-hidden rounded-lg">
+                            <a href="${detailUrl}">
+                                <img src="/Content/images/product/${product.ImageProduct}.jpg" class="card-object-fit h-full w-full" alt="${product.ProductName}" />
+                            </a>
+                        </div>
+                        <div class="my-2 flex justify-between">
+                            <div class="flex">`;
+                if (product.Rate == 0) {
+                    strHTML = strHTML + `
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>`;
+                }
+                else if (product.Rate > 0 && product.Rate <= 1) {
+                    strHTML = strHTML + `
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>`;
+                }
+                else if (product.Rate > 1 && product.Rate <= 2) {
+                    strHTML = strHTML + `
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>`;
+                }
+                else if (product.Rate > 2 && product.Rate <= 3) {
+                    strHTML = strHTML + `
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>`;
+                }
+                else if (product.Rate > 3 && product.Rate <= 4) {
+                    strHTML = strHTML + `
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-gray-200"></i>`;
+                }
+                else {
+                    strHTML = strHTML + `
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>
+                    <i class="bi bi-star-fill flex text-base text-star"></i>`;
+                }
+                if (product.Quantity > 0) {
+                    strHTML = strHTML + `
+                    </div>
+                    <div>
+                        <span class="rounded-md bg-green-300 py-1 px-2 text-xs font-bold uppercase text-white">instock</span>`;
+                }
+                else {
+                    strHTML = strHTML + `
+                    </div>
+                    <div>
+                        <span class="rounded-md bg-green-300 py-1 px-2 text-xs font-bold uppercase text-white" style="background-color:red">saleout</span>`;
+                }
+                strHTML = strHTML + `
+                            </div>
+                        </div>
+                        <div class="my-1">
+                            <a class="clamp break-all font-medium" href="${detailUrl}">
+                                ${product.ProductName}
+                            </a>
+                        </div>
+                        <div class="my-1">
+                            <p class="clamp-2 text-sm text-gray-400">
+                                ${product.Description}
+                            </p>
+                        </div>
+                        <div class="my-1">`;
+                //if (d == 0) {
+                //    strHTML = strHTML + `
+                //    <span class="text-lg font-bold">₫${product.Price.toLocaleString()}</span>`;
+                //}
+                //else {
+                //    strHTML = strHTML + strPrice;
+                //}
+                strHTML = strHTML + `
+                    <span class="text-lg font-bold">₫${product.Price.toLocaleString()}</span>`;
+
+                strHTML = strHTML + `
+                        </div>
+                        <div class="mt-auto">
+                            <a  id="addtocart" data-productcode="${product.ProductCode}" class="btn-effect transition-all-300 flex w-full items-center justify-center rounded-lg bg-primary-color p-2" href="#!">
+                                <i class="bi bi-cart-fill flex text-xl text-white"></i>
+                                <span class="font-bold uppercase text-white">Add to cart</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+                $('.data-products').append(strHTML);
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Hàm để tạo các nút phân trang
+        function createPaginationButtons(totalPages) {
+            $('.pagination').empty(); // Xóa các nút phân trang hiện tại trước khi tạo mới
+
+            // Thêm các nút trang
+            for (let i = 1; i <= totalPages; i++) {
+                const button = `<li class="${i === currentPage ? 'active' : ''} cursor-pointer py-2 px-3" data-page="${i}">${i}</li>`;
+                $('.pagination').append(button);
+            }
+        }
+        var catecode = $('#category').data('category');
+        if (catecode != 0) {
+            // Gọi API để lấy dữ liệu sản phẩm
+            $.ajax({
+                url: '/Api/Product',
+                type: 'GET',
+                data: { 'catecode': catecode },
+                success: function (response) {
+                    const products = response; // Dữ liệu sản phẩm từ API
+                    totalPages = Math.ceil(products.length / itemsPerPage); // Tính tổng số trang
+                    displayData(products); // Hiển thị dữ liệu cho trang đầu tiên
+                    createPaginationButtons(totalPages); // Tạo các nút phân trang
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+        else {
+            // Gọi API để lấy dữ liệu sản phẩm
+            $.ajax({
+                url: '/Api/Product',
+                type: 'GET',
+                success: function (response) {
+                    const products = response; // Dữ liệu sản phẩm từ API
+                    totalPages = Math.ceil(products.length / itemsPerPage); // Tính tổng số trang
+                    displayData(products); // Hiển thị dữ liệu cho trang đầu tiên
+                    createPaginationButtons(totalPages); // Tạo các nút phân trang
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        // Xử lý khi người dùng nhấn vào nút phân trang
+        $(document).on('click', '.pagination li', function () {
+            const clickedPage = parseInt($(this).attr('data-page')); // Lấy số trang từ thuộc tính data-page của nút
+            if (!isNaN(clickedPage)) {
+                currentPage = clickedPage;
+                var catecode1 = $('#category').data('category');
+                if (catecode1 != 0) {
+                    $.ajax({
+                        url: '/Api/Product',
+                        type: 'GET',
+                        data: { 'catecode': catecode1 },
+                        success: function (response) {
+                            const products = response; // Dữ liệu sản phẩm từ API
+                            displayData(products); // Hiển thị dữ liệu cho trang hiện tại
+                            createPaginationButtons(totalPages);
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: '/Api/Product',
+                        type: 'GET',
+                        success: function (response) {
+                            const products = response; // Dữ liệu sản phẩm từ API
+                            displayData(products); // Hiển thị dữ liệu cho trang hiện tại
+                            createPaginationButtons(totalPages);
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
+                }
+            }
+        });
+    });
+</script>*@
+
